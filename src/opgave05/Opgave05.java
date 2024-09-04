@@ -13,6 +13,20 @@ public class Opgave05 {
     }
 
     public static double calculateFee(int price) {
-        return 0;
+        double new_price;
+
+        if (price<=67800){
+            new_price=price*0.25;
+        }
+
+        else if (price<=210600){
+            new_price=(price-67800)*0.85+price*0.25;
+        }
+
+        else {
+            new_price=(price-210600)*1.5+(price-67800)*0.85+price*0.25;
+        }
+
+        return new_price;
     }
 }
