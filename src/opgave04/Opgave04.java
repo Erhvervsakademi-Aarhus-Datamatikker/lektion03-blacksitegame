@@ -1,6 +1,10 @@
 package opgave04;
 
+import javax.print.DocFlavor;
+import java.nio.file.attribute.UserDefinedFileAttributeView;
+import java.sql.SQLOutput;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Opgave04 {
     public static void main(String[] args) {
@@ -12,44 +16,47 @@ public class Opgave04 {
         int scissor = 2;
 
         System.out.println("Rock (0), Paper (1), Scissor (2): ");
-        int Rock_Paper_scissor_number = scanner.nextInt();
+        int user_input = scanner.nextInt();
 
-        int computer_number = (int)(Math.random()*3);
+        System.out.println("Computers turn: ");
+        int Computer_Input = (int) (Math.random() * 3);
 
-        if (Rock_Paper_scissor_number==0){
-            if (computer_number==0){
-                System.out.println("You chose Rock. Computer chose rock. Its a draw");
-            }
-            else if (computer_number==1) {
-                System.out.println("You chose Rock. Computer chose paper. You lost");
-            }
-            else {
-                System.out.println("You chose rock. Computer chose scissor. You won");
-            }
-
-        }
-
-        else if (Rock_Paper_scissor_number==1) {
-            if (computer_number == 0) {
-                System.out.println("You chose Paper. Computer chose rock. You a won");
-            } else if (computer_number == 1) {
-                System.out.println("You chose Paper. Computer chose paper. Its a draw");
-            } else {
-                System.out.println("You chose rock. Computer chose scissor. You lost");
-            }
-            if (Rock_Paper_scissor_number > computer_number) {
-                System.out.println("You won");
+        if (user_input == 0) {
+            if (Computer_Input == 0) {
+                System.out.println("User: Rock. Computer: Rock. Draw");
+            } else if (Computer_Input == 1) {
+                System.out.println("User: Rock. Computer: Paper. Winner: Computer");
+            } else if (Computer_Input == 2) {
+                System.out.println("User: Rock. Computer: Scissor. Winner: User");
             }
 
         }
-        else if (Rock_Paper_scissor_number==2) {
-            if (computer_number == 0) {
-                System.out.println("You chose Scissor. Computer chose rock. You lost");
-            } else if (computer_number == 1) {
-                System.out.println("You chose Scissor. Computer chose paper. You won");
-            } else {
-                System.out.println("You chose Scissor. Computer chose scissor. Its a draw");
+        else if (user_input == 1) {
+            if (Computer_Input == 0) {
+                System.out.println("User: Paper. Computer: Rock. Winner: User");
             }
+            else if (Computer_Input == 1) {
+                System.out.println("User: Paper. Computer: Paper. Draw");
+            }
+            else if (Computer_Input == 2) {
+                System.out.println("User: Paper. Computer: Scissor. Winner: Computer");
+            }
+
+        }
+        else if (user_input == 2) {
+            if (Computer_Input == 0) {
+                System.out.println("User: Scissor. Computer: Rock. Winner: Computer");
+            }
+            else if (Computer_Input == 1) {
+                System.out.println("User: Scissor. Computer: Paper. Winner: User");
+            }
+            else if (Computer_Input == 2) {
+                System.out.println("User: Scissor. Computer: Scissor. Draw");
+            }
+        }
+        else {
+            System.out.println("Wrong Input");
         }
     }
 }
+

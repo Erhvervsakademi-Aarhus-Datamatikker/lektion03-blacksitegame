@@ -25,7 +25,5 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="junit.jupiter" level="project" />
-    <orderEntry type="library" name="junit.jupiter1" level="project" />
-    <orderEntry type="library" name="junit.jupiter2" level="project" />
   </component>
 </module>

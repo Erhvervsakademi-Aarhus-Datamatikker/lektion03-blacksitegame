@@ -5,35 +5,34 @@ import java.util.Scanner;
 public class Opgave01 {
     public static void main(String[] args) {
 
-        //I create my scanner
+        //Scanner
+
         Scanner scanner = new Scanner(System.in);
 
-        //My Variables
-        double alcohol_below_16 = 1.2;
-        double alcohol_above_18 = 16.5;
+        //Variables
 
-        //Input age and alcohol percentage
-        System.out.println("Write your age: ");
-        int age = scanner.nextInt();
-        System.out.println("Write alcohol percentage: ");
+        double low_alcohol=1.2;
+        double high_alcohol=16.5;
+
+        //Inputs
+
+        System.out.println("Skriv din alder: ");
+        int alder = scanner.nextInt();
+
+        System.out.println("Skriv alkohol procent: ");
         double alcohol_percentage = scanner.nextDouble();
 
-        //If and Else Statements
-        if (age<16 && alcohol_percentage<alcohol_below_16){
-            System.out.println("Go Ahead");
+        //If and else statements
 
-        } else if (age<16 && alcohol_percentage>alcohol_below_16) {
-            System.out.println("No alcohol for you my friend");
+        if (alcohol_percentage>low_alcohol && alder<16){
+            System.out.println("Nope");
+        }
 
-        } else if (age>=16 && age<18 && alcohol_percentage<alcohol_above_18) {
-            System.out.println("Go Ahead");
-
-        } else if (age>=16 && age<18 && alcohol_percentage>alcohol_above_18) {
-            System.out.println("No alcohol for you my friend");
+        else if (alcohol_percentage>high_alcohol && alder<18){
+            System.out.println("nope");
         }
         else {
             System.out.println("Go Ahead");
         }
-
     }
 }
